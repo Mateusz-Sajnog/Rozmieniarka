@@ -1,7 +1,7 @@
 package javahive;
 
-import org.junit.Assert;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertTrue;
+
 import org.junit.Test;
 
 public class RozmieniarkaTest {
@@ -9,7 +9,7 @@ public class RozmieniarkaTest {
 	@Test
 	public void PowinienRozmieniacPoprawnie124(){
 		//given
-		Rozmieniarka rozmieniarka=new RozmieniarkaImpl();
+		Rozmieniarka rozmieniarka=new RozmieniarkaMSimpl();
 		//when
 		Nominaly nominaly=rozmieniarka.rozmien(124, NOMINALY_PL);
 		//then
@@ -17,4 +17,5 @@ public class RozmieniarkaTest {
 		assertTrue(nominaly.getIlosc(20)==1);
 		assertTrue(nominaly.getIlosc(2)==2);
 	}
+	
 }
