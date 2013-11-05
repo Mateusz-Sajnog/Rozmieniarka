@@ -8,20 +8,21 @@ public class RozmieniarkaMSImpl implements Rozmieniarka{
 			throw new ArithmeticException();
 		}		
 		Nominaly rozmienione = new Nominaly();
-		
+		double kwota2 = kwota;
 		int ilosc = 0;
+		int sto = 100;
 		for (int i = 0; i < dostepneNominaly.length; i++) {
 
-		 if(kwota/dostepneNominaly[i] > 0);
+		 if(kwota2/dostepneNominaly[i] > 0)
 		 {
-			 ilosc = (int) (kwota/dostepneNominaly[i]);	
+			 ilosc = (int) (kwota2/dostepneNominaly[i]);	
 			 rozmienione.setIlosc(dostepneNominaly[i], ilosc);
-			 kwota *=100;
-			 kwota -= (dostepneNominaly[i] * ilosc * 100); 
-			 kwota  = Math.round(kwota);
-			 kwota /= 100;
+			 kwota2 *= sto;
+			 kwota2 -= (dostepneNominaly[i] * ilosc * sto); 
+			 kwota2  = Math.round(kwota2);
+			 kwota2 /= sto;
 			 
-			 if(kwota == 0.00)
+			 if(kwota2 == 0.00)
 			 {
 				 return rozmienione;
 			 }
